@@ -7,13 +7,19 @@ class DockingStation
     @aval_bikes = []
   end
 
+
+  def full?
+    if @aval_bikes.length >= 20
+       raise StandardError.new "Docking station full"
+    else
+       @aval_bikes << bike
+    end
+  end
+
+
   def dock(bike)
     @bike = bike
-    if @aval_bikes.length >= 20
-      raise StandardError.new "Docking station full"
-    else
-      @aval_bikes << bike
-    end
+    full?
   end
 
   def release_bike

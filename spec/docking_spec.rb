@@ -30,4 +30,3 @@ end
 let(:aval_bikes) {[]}
     it { expect{docking_station.release_bike}.to raise_error StandardError}
 end
-
